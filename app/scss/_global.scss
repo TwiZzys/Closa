@@ -1,8 +1,19 @@
+html,
+body{
+  height: 100%;
+}
+
 body{
   @extend %pt-500;
   font-size: 16px;
   line-height: 19px;
   color: $black;
+  display: flex;
+  flex-direction: column;
+}
+
+.main{
+  flex-grow: 1;
 }
 
 .container{
