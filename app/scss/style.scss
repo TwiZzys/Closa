@@ -58,6 +58,44 @@
   }
 }
 
+.search {
+  background: $black;
+}
+
+.search-form {
+
+  &__input-box {
+    position: relative;
+
+    &::before {
+      content: '';
+      width: 18px;
+      height: 18px;
+      background: url(../images/icons/search.svg);
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__input {
+    padding: 18px 30px;
+    width: 100%;
+    color: rgba(#fff, .5);
+    border: none;
+    background: $black;
+    outline: $black;
+  }
+
+  &__input::placeholder {
+    @extend %pt-400;
+    line-height: 24px;
+    color: rgba(#fff, .5)
+  }
+}
+
+
+
 .footer {
   color: $gray;
 
