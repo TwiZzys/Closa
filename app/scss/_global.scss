@@ -1,9 +1,9 @@
 html,
-body{
+body {
   height: 100%;
 }
 
-body{
+body {
   @extend %pt-500;
   font-size: 16px;
   line-height: 19px;
@@ -12,20 +12,28 @@ body{
   flex-direction: column;
 }
 
-.main{
+.main {
   flex-grow: 1;
 }
 
-.container{
+.container {
   max-width: 1170px;
   padding: 0 15px;
   margin: 0 auto;
 }
 
-.btn{
+.btn {
   @extend %pt-500;
   padding: 14px 32px;
   background: $btn;
   color: #fff;
   border-radius: 12px;
+}
+
+.tabs-content {
+  display: none;
+
+  &--active {
+    display: block;
+  }
 }

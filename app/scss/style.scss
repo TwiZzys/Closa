@@ -181,6 +181,29 @@
   }
 }
 
+.product {
+  &__tabs {
+    padding-bottom: 12px;
+    border-bottom: 1px solid $gray-light;
+  }
+
+  &__tab {
+    @extend %pt-400;
+    color: inherit;
+  }
+
+  &__tab + &__tab {
+    margin-left: 30px;
+  }
+
+  .tab--active {
+    @extend %pt-500;
+    color: $btn;
+    padding-bottom: 11.5px;
+    border-bottom: 1px solid $btn;
+  }
+}
+
 .footer {
   color: $gray;
 
