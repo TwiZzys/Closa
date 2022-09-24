@@ -1,3 +1,4 @@
+@import 'libs';
 @import 'vars';
 @import 'fonts';
 @import 'reset';
@@ -90,11 +91,95 @@
   &__input::placeholder {
     @extend %pt-400;
     line-height: 24px;
-    color: rgba(#fff, .5)
+    color: rgba(#fff, .5);
   }
 }
 
+.home {
+  &__inner {
+    margin: 30px 0;
+  }
 
+  &__title {
+    @extend %pt-700;
+    font-size: 36px;
+    line-height: 43px;
+  }
+
+  &__title,
+  &__subtitle {
+    margin-bottom: 16px;
+  }
+}
+
+.home-slider {
+  &__item {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right center;
+    padding-left: 30px;
+    border-radius: 24px;
+  }
+
+  &__box {
+    max-width: 540px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  &__link {
+    margin-bottom: 30px;
+    color: $btn;
+  }
+
+  &__btn {
+    span {
+      position: relative;
+      padding-right: 30px;
+    }
+
+    span::before {
+      content: '';
+      width: 20px;
+      height: 20px;
+      background: url(../images/icons/home-link-arrow.svg);
+      position: absolute;
+      right: 0;
+    }
+  }
+
+  .slick-dots {
+    position: absolute;
+    left: 30px;
+    bottom: 25px;
+  }
+
+  .slick-dots li {
+    display: inline-block;
+  }
+
+  .slick-dots li+li {
+    margin-left: 8px;
+  }
+
+  .slick-dots button {
+    font-size: 0;
+    border: none;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    background: $gray;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .slick-dots .slick-active button {
+    background: $btn;
+  }
+}
 
 .footer {
   color: $gray;

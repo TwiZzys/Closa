@@ -9,7 +9,7 @@ const del = require('del');
 
 function browser_sync() {
   browserSync.init({
-    server:{
+    server: {
       baseDir: 'app/'
     },
     notify: false
@@ -17,26 +17,35 @@ function browser_sync() {
 }
 function styles() {
   return src('app/scss/style.scss')
-  .pipe(scss({
-    outputStyle: 'compressed'
-  }))
-  .pipe(concat('style.min.css'))
-  .pipe(autoprefixer({
-    overrideBrowserslist:['last 10 versions'],
-    grid: true
-  }))
-  .pipe(dest('app/css'))
+    .pipe(scss({
+      outputStyle: 'compressed'
+    }))
+    .pipe(concat('style.min.css'))
+    .pipe(autoprefixer({
+      overrideBrowserslist: ['last 10 versions'],
+      grid: true
+    }))
+    .pipe(dest('app/css'))
     .pipe(browserSync.stream())
 }
 
 function scripts() {
   return src([
     'node_modules/jquery/dist/jquery.js',
+    'node_modules/slick-carousel/slick/slick.js',
     'app/js/main.js'
   ])
-  .pipe(concat('main.min.js'))
-  .pipe(uglify())
-  .pipe(dest('app/js'))
+    .pipe(concat('main.min.js'))
+    .pipe(uglify())
+    .pipe(dest('app/js'))
+    .pipe(browserSync.stream())
+}
+function libs() {
+  return src([
+    'node_modules/slick-carousel/slick/slick.scss'
+  ])
+    .pipe(concat('_libs.scss'))
+    .pipe(dest('app/scss'))
     .pipe(browserSync.stream())
 }
 
@@ -53,7 +62,7 @@ function images() {
         ]
       })
     ]))
-  .pipe(dest('dist/images'))
+    .pipe(dest('dist/images'))
 }
 
 function build() {
@@ -61,11 +70,11 @@ function build() {
     'app/**/*.html',
     'app/css/style.min.css',
     'app/js/main.min.js'
-  ], {base: 'app'})
-  .pipe(dest('dist'))
+  ], { base: 'app' })
+    .pipe(dest('dist'))
 }
 
-function cleanDist(){
+function cleanDist() {
   return del('dist');
 }
 
@@ -82,5 +91,6 @@ exports.browser_sync = browser_sync;
 exports.watching = watching;
 exports.images = images;
 exports.cleanDist = cleanDist;
+exports.libs = libs;
 exports.build = series(cleanDist, images, build);
-exports.default = parallel(styles, scripts, browser_sync, watching);
+exports.default = parallel(styles, libs, scripts, browser_sync, watching);
