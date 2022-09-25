@@ -4,6 +4,12 @@
 @import 'reset';
 @import 'global';
 
+.title {
+  @extend %pt-700;
+  font-size: 36px;
+  line-height: 43px;
+  color: $black;
+}
 
 .header {
   &__inner {
@@ -185,6 +191,7 @@
   &__tabs {
     padding-bottom: 12px;
     border-bottom: 1px solid $gray-light;
+    margin-bottom: 30px;
   }
 
   &__tab {
@@ -192,7 +199,7 @@
     color: inherit;
   }
 
-  &__tab + &__tab {
+  &__tab+&__tab {
     margin-left: 30px;
   }
 
@@ -201,6 +208,167 @@
     color: $btn;
     padding-bottom: 11.5px;
     border-bottom: 1px solid $btn;
+  }
+
+  &__subtitle {
+    @extend %pt-400;
+    font-size: 16px;
+    line-height: 19px;
+    display: block;
+    color: $gray;
+    margin-bottom: 4px;
+  }
+
+  &__title {
+    margin-bottom: 50px;
+  }
+
+  &__box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__tabs-container {
+    margin-bottom: 64px;
+  }
+
+  &__inner {
+    padding-bottom: 30px;
+    border-bottom: 1px solid $gray-light;
+  }
+
+  &__filter-text {
+    margin-right: 12px;
+    color: $gray;
+  }
+
+  &__more {
+    margin: 0 auto;
+  }
+}
+
+.product-items {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.product-item {
+  max-width: 267px;
+  margin-bottom: 30px;
+  position: relative;
+
+  &--new::before,
+  &--sale::before {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    position: absolute;
+    padding: 4px 12px;
+    background: #fff;
+    border-radius: 8px;
+    position: absolute;
+    top: 16px;
+    left: 16px;
+  }
+
+  &--new::before {
+    content: 'New';
+  }
+
+  &--sale::before {
+    content: 'Sale';
+    background: $red;
+    color: #fff;
+  }
+
+  &__link {
+    color: inherit;
+  }
+
+  &__img {
+    max-height: 222px;
+    object-fit: cover;
+    margin-bottom: 16px;
+  }
+
+  &__info-box {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 12px;
+    border-bottom: 1px solid $gray-light;
+    margin-bottom: 12px;
+  }
+
+  &__title {
+    position: relative;
+
+    &--checked {
+      padding-left: 28px;
+    }
+  }
+
+  &__title--checked::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: url(../images/icons/verified_user.svg);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &__price-box {
+    display: flex;
+  }
+
+  &__price-old {
+    color: $red;
+    text-decoration: line-through;
+    margin-right: 12px;
+  }
+
+  &__text,
+  &__size {
+    @extend %pt-400;
+    color: $gray;
+  }
+
+  &__text {
+    margin-bottom: 8px;
+  }
+
+  &__size {
+    margin-bottom: 16px;
+  }
+
+  &__favorite,
+  &__basket {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  &__favorite {
+    margin-right: 12px;
+  }
+
+  &__favorite--active {
+    background: url(../images/icons/favorite-active.svg);
+  }
+
+  &__basket {
+    &--draft {
+      img {
+        display: none;
+      }
+
+      background: url(../images/icons/drafts.svg);
+      width: 20px;
+      height: 20px;
+    }
   }
 }
 
