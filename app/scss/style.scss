@@ -229,6 +229,69 @@
     align-items: center;
   }
 
+  &__filter {
+    .jq-selectbox {
+      &__select {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 223px;
+        height: 48px;
+        border: 1px solid $gray-light;
+        border-radius: 16px;
+        background: #fff;
+        box-shadow: none;
+        @extend %pt-400;
+        color: $black;
+        text-shadow: none;
+      }
+
+      &__trigger {
+        border-left: none;
+      }
+
+      &__trigger-arrow {
+        position: absolute;
+        top: 14px;
+        right: 12px;
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        width: 20px;
+        height: 20px;
+        background: url(../images/icons/trigger.svg);
+      }
+
+      .jq-selectbox__dropdown {
+        width: 100%;
+        margin: 0;
+        padding: 14px 16px;
+        border: 1px solid $gray-light;
+        border-radius: 16px;
+        background: #fff;
+        box-shadow: none;
+        @extend %pt-400;
+        font-size: 16px;
+        line-height: 19px;
+      }
+
+      & li {
+        color: $gray;
+        background: transparent;
+        margin-bottom: 16px;
+      }
+      & li:last-child{
+        margin-bottom: 0;
+      }
+
+      .selected,
+      & li:hover {
+        color: $black;
+      }
+    }
+  }
+
   &__tabs-container {
     margin-bottom: 64px;
   }

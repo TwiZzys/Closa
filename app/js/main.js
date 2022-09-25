@@ -21,4 +21,5 @@ $(function () {
   $('.product-item__basket').on('click', function () {
     $(this).toggleClass('product-item__basket--draft');
   })
+  $('.product__filter-select').styler();
 });

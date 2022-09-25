@@ -33,6 +33,7 @@ function scripts() {
   return src([
     'node_modules/jquery/dist/jquery.js',
     'node_modules/slick-carousel/slick/slick.js',
+    'node_modules/jquery-form-styler/dist/jquery.formstyler.js',
     'app/js/main.js'
   ])
     .pipe(concat('main.min.js'))
@@ -42,7 +43,9 @@ function scripts() {
 }
 function libs() {
   return src([
-    'node_modules/slick-carousel/slick/slick.scss'
+    'node_modules/slick-carousel/slick/slick.scss',
+    'node_modules/jquery-form-styler/dist/jquery.formstyler.css',
+    'node_modules/jquery-form-styler/dist/jquery.formstyler.theme.css'
   ])
     .pipe(concat('_libs.scss'))
     .pipe(dest('app/scss'))
