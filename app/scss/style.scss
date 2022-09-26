@@ -4,13 +4,6 @@
 @import 'reset';
 @import 'global';
 
-.title {
-  @extend %pt-700;
-  font-size: 36px;
-  line-height: 43px;
-  color: $black;
-}
-
 .header {
   &__inner {
     display: flex;
@@ -210,25 +203,6 @@
     border-bottom: 1px solid $btn;
   }
 
-  &__subtitle {
-    @extend %pt-400;
-    font-size: 16px;
-    line-height: 19px;
-    display: block;
-    color: $gray;
-    margin-bottom: 4px;
-  }
-
-  &__title {
-    margin-bottom: 50px;
-  }
-
-  &__box {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
   &__filter {
     .jq-selectbox {
       &__select {
@@ -281,7 +255,8 @@
         background: transparent;
         margin-bottom: 16px;
       }
-      & li:last-child{
+
+      & li:last-child {
         margin-bottom: 0;
       }
 
@@ -308,6 +283,15 @@
 
   &__more {
     margin: 0 auto;
+  }
+}
+
+.product-box {
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
   }
 }
 
@@ -432,6 +416,45 @@
       width: 20px;
       height: 20px;
     }
+  }
+}
+
+.popular {
+  &__inner {
+    padding-bottom: 64px;
+    border-bottom: 1px solid $gray-light;
+    margin-bottom: 64px;
+  }
+}
+
+.popular-items {
+  display: flex;
+  justify-content: space-between;
+}
+
+.popular-item {
+  &__img {
+    margin-bottom: 16px;
+  }
+
+  &__link {
+    display: block;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: $black;
+    position: relative;
+  }
+
+  &__link::before {
+    content: '';
+    width: 16px;
+    height: 12px;
+    background: url(../images/icons/link-arrow.jpg);
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
   }
 }
 
