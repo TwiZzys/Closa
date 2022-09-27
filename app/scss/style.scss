@@ -532,6 +532,40 @@
   }
 }
 
+.blog {
+  &__inner {
+    margin-bottom: 30px;
+  }
+
+  &__article {
+    width: 267px;
+    color: $gray;
+  }
+
+  &__article-img {
+    margin-bottom: 16px;
+    max-height: 240px;
+  }
+
+  &__article-date {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    margin-bottom: 8px;
+  }
+
+  &__article-title {
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 16px;
+    color: $black;
+  }
+
+  &__article-linkArrow {
+    margin-left: auto;
+  }
+}
+
 .footer {
   color: $gray;
 
