@@ -34,6 +34,7 @@ function scripts() {
     'node_modules/jquery/dist/jquery.js',
     'node_modules/slick-carousel/slick/slick.js',
     'node_modules/jquery-form-styler/dist/jquery.formstyler.js',
+    'node_modules/rateyo/src/jquery.rateyo.js',
     'app/js/main.js'
   ])
     .pipe(concat('main.min.js'))
@@ -45,7 +46,8 @@ function libs() {
   return src([
     'node_modules/slick-carousel/slick/slick.scss',
     'node_modules/jquery-form-styler/dist/jquery.formstyler.css',
-    'node_modules/jquery-form-styler/dist/jquery.formstyler.theme.css'
+    'node_modules/jquery-form-styler/dist/jquery.formstyler.theme.css',
+    'node_modules/rateyo/src/jquery.rateyo.css'
   ])
     .pipe(concat('_libs.scss'))
     .pipe(dest('app/scss'))

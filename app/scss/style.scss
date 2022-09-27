@@ -458,6 +458,38 @@
   }
 }
 
+.popular-sell {
+  &__img {
+    max-width: 267px;
+    max-height: 267px;
+    object-fit: cover;
+    margin-bottom: 24px;
+  }
+
+  &__name {
+    color: $black;
+    margin-bottom: 12px;
+  }
+
+  &__box {
+    display: flex;
+    align-items: center;
+  }
+
+  &__star {
+    margin-right: 12px;
+  }
+
+  &__vote {
+    font-weight: 400;
+    color: $gray;
+  }
+}
+
+.star {
+  padding: 0;
+}
+
 .footer {
   color: $gray;
 
