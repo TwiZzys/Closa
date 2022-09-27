@@ -57,3 +57,48 @@ body {
 .link {
   color: $btn;
 }
+
+.breadcrumbs {
+  background: $gray-light;
+  padding: 24px 0;
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    position: relative;
+    padding-right: 10px;
+  }
+
+  &__item+&__item {
+    padding-left: 6px;
+  }
+
+  &__item::after {
+    content: '/';
+    position: absolute;
+    right: 0;
+  }
+
+  &__item:last-child {
+    .breadcrumbs__link {
+      color: $gray;
+    }
+  }
+
+  &__item:last-child::after {
+    display: none;
+  }
+
+  &__link {
+    color: $black;
+  }
+}
+
+.breadcrumbs-title {
+  @extend %pt-700;
+  font-size: 24px;
+  line-height: 29px;
+  margin-bottom: 8px;
+}
