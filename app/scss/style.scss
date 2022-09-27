@@ -490,6 +490,48 @@
   padding: 0;
 }
 
+.benefit {
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 267px;
+  }
+
+  &__item-title {
+    font-size: 20px;
+    line-height: 24px;
+    margin: 24px 0 16px;
+  }
+
+  &__item--marketplace::before,
+  &__item--original::before,
+  &__item--assortment::before,
+  &__item--dollar::before {
+    content: '';
+    width: 124px;
+    height: 124px;
+  }
+
+  &__item--marketplace::before {
+    background: url(../images/icons/bag.svg);
+  }
+
+  &__item--original::before {
+    background: url(../images/icons/checked.svg);
+  }
+
+  &__item--assortment::before {
+    background: url(../images/icons/filter.svg);
+  }
+
+  &__item--dollar::before {
+    background: url(../images/icons/dollar.svg);
+  }
+}
+
 .footer {
   color: $gray;
 
