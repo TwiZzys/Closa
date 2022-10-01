@@ -31,4 +31,8 @@ $(function () {
     ratedFill: '#7984C0',
     readOnly: true,
   });
+  $('.categories-filter__title').on('click', function () {
+    $(this).toggleClass('categories-filter__title--toggle');
+    $(this).next().slideToggle();
+  })
 });

@@ -102,3 +102,10 @@ body {
   line-height: 29px;
   margin-bottom: 8px;
 }
+
+.filter-title {
+  @extend %pt-500;
+  font-size: 20px;
+  line-height: 24px;
+  color: $black;
+}
