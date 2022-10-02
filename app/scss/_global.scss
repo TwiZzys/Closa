@@ -109,3 +109,30 @@ body {
   line-height: 24px;
   color: $black;
 }
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item+&__item {
+    margin-left: 12px;
+  }
+
+  &__link {
+    color: inherit;
+  }
+
+  &__link--active {
+    color: $btn;
+  }
+
+  &__next {
+    padding-left: 12px;
+  }
+}

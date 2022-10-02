@@ -35,4 +35,9 @@ $(function () {
     $(this).toggleClass('categories-filter__title--toggle');
     $(this).next().slideToggle();
   })
+  $('.letters__form-btn').on('click', function (e) {
+    e.preventDefault();
+    $('.letters__form-btn').removeClass('letters__form-btn--active');
+    $(this).addClass('letters__form-btn--active');
+  });
 });
