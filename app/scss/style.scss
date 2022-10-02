@@ -777,6 +777,30 @@
   }
 }
 
+.search-404 {
+  margin-bottom: 30px;
+}
+
+.page-404 {
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 225px 0;
+  }
+
+  &__title {
+    @extend %pt-700;
+    font-size: 124px;
+    line-height: 149px;
+    color: $gray-light;
+  }
+  &__text{
+    margin-bottom: 25px;
+  }
+}
+
 .footer {
   color: $gray;
 
