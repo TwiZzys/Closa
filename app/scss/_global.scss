@@ -22,13 +22,20 @@ body {
   margin: 0 auto;
 }
 
+.btn-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
 .btn {
   @extend %pt-500;
   padding: 14px 32px;
   background: $btn;
   color: #fff;
   border-radius: 12px;
-  margin: 0 auto;
 }
 
 .title {
@@ -115,6 +122,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 
   &__list {
     display: flex;
