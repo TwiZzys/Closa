@@ -60,6 +60,10 @@
 
 .search {
   background: $black;
+
+  &__inner {
+    margin-bottom: 30px;
+  }
 }
 
 .search-form {
@@ -777,10 +781,6 @@
   }
 }
 
-.search-404 {
-  margin-bottom: 30px;
-}
-
 .page-404 {
   &__inner {
     display: flex;
@@ -796,8 +796,79 @@
     line-height: 149px;
     color: $gray-light;
   }
-  &__text{
+
+  &__text {
     margin-bottom: 25px;
+  }
+}
+
+.blog-one {
+  &__content {
+    border-bottom: 1px solid $gray-light;
+    margin-bottom: 65px;
+    padding-bottom: 65px;
+  }
+
+  &__content-inner {
+    max-width: 750px;
+    margin: 0 auto;
+  }
+
+  &__title,
+  &__img {
+    margin-bottom: 15px;
+  }
+
+  &__date,
+  &__author {
+    @extend %pt-400;
+    font-size: 14px;
+    line-height: 17px;
+    color: $gray;
+  }
+
+  &__date {
+    margin-bottom: 30px;
+  }
+
+  &__inner {
+    display: flex;
+    position: relative;
+  }
+
+  &__social {
+    position: absolute;
+    left: -70px;
+  }
+
+  &__social-item {
+    width: 48px;
+    height: 48px;
+    border: 1px solid $gray-light;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+  }
+
+  &__social-item+&__social-item {
+    margin-top: 16px;
+  }
+
+  &__box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin-bottom: 65px;
+  }
+
+  &__text-box {
+    @extend %pt-400;
+    line-height: 24px;
+  }
+
+  &__text {
+    margin-bottom: 30px;
   }
 }
 
