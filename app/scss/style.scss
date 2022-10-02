@@ -280,10 +280,6 @@
     margin-right: 12px;
     color: $gray;
   }
-
-  &__more {
-    margin: 0 auto;
-  }
 }
 
 .product-box {
@@ -726,10 +722,6 @@
 }
 
 .brands {
-  &__info {
-    margin-bottom: 30px;
-  }
-
   .popular-item__img-box {
     display: flex;
     justify-content: center;
@@ -741,9 +733,33 @@
     margin-bottom: 20px;
   }
 
-  &__btn-more {
-    margin: 65px auto 30px;
+  .popular-item {
+    margin-bottom: 30px;
   }
+}
+
+.info {
+  margin-bottom: 30px;
+}
+
+
+.sellers {
+  &__box-inner {
+    margin-bottom: 30px;
+  }
+
+  &__box-info {
+    margin: 0;
+  }
+
+  .popular-item {
+    margin-bottom: 30px;
+  }
+}
+
+.brands__btn,
+.sellers__btn {
+  margin-bottom: 30px;
 }
 
 .footer {
