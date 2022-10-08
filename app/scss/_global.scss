@@ -36,6 +36,8 @@ body {
   background: $btn;
   color: #fff;
   border-radius: 12px;
+  border: none;
+  cursor: pointer;
 }
 
 .title {
@@ -116,6 +118,27 @@ body {
   font-size: 20px;
   line-height: 24px;
   color: $black;
+  position: relative;
+  cursor: pointer;
+
+  &::before,
+  &--toggle::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+  }
+
+  &::before {
+    background: url(../images/icons/remove.svg);
+  }
+
+  &--toggle::before {
+    background: url(../images/icons/add.svg);
+  }
 }
 
 .pagination {

@@ -207,70 +207,6 @@
     border-bottom: 1px solid $btn;
   }
 
-  &__filter {
-    .jq-selectbox {
-      &__select {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        width: 223px;
-        height: 48px;
-        border: 1px solid $gray-light;
-        border-radius: 16px;
-        background: #fff;
-        box-shadow: none;
-        @extend %pt-400;
-        color: $black;
-        text-shadow: none;
-      }
-
-      &__trigger {
-        border-left: none;
-      }
-
-      &__trigger-arrow {
-        position: absolute;
-        top: 14px;
-        right: 12px;
-        border-top: none;
-        border-right: none;
-        border-left: none;
-        width: 20px;
-        height: 20px;
-        background: url(../images/icons/trigger.svg);
-      }
-
-      .jq-selectbox__dropdown {
-        width: 100%;
-        margin: 0;
-        padding: 14px 16px;
-        border: 1px solid $gray-light;
-        border-radius: 16px;
-        background: #fff;
-        box-shadow: none;
-        @extend %pt-400;
-        font-size: 16px;
-        line-height: 19px;
-      }
-
-      & li {
-        color: $gray;
-        background: transparent;
-        margin-bottom: 16px;
-      }
-
-      & li:last-child {
-        margin-bottom: 0;
-      }
-
-      .selected,
-      & li:hover {
-        color: $black;
-      }
-    }
-  }
-
   &__tabs-container {
     margin-bottom: 64px;
   }
@@ -280,13 +216,77 @@
     border-bottom: 1px solid $gray-light;
   }
 
-  &__filter-text {
+  &__btn-box {
+    margin: 0;
+  }
+}
+
+.product-filter {
+  &__text {
     margin-right: 12px;
     color: $gray;
   }
 
-  &__btn-box {
-    margin: 0;
+  .jq-selectbox {
+    &__select {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      width: 223px;
+      height: 48px;
+      border: 1px solid $gray-light;
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: none;
+      @extend %pt-400;
+      color: $black;
+      text-shadow: none;
+    }
+
+    &__trigger {
+      border-left: none;
+    }
+
+    &__trigger-arrow {
+      position: absolute;
+      top: 14px;
+      right: 12px;
+      border-top: none;
+      border-right: none;
+      border-left: none;
+      width: 20px;
+      height: 20px;
+      background: url(../images/icons/trigger.svg);
+    }
+
+    .jq-selectbox__dropdown {
+      width: 100%;
+      margin: 0;
+      padding: 14px 16px;
+      border: 1px solid $gray-light;
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: none;
+      @extend %pt-400;
+      font-size: 16px;
+      line-height: 19px;
+    }
+
+    & li {
+      color: $gray;
+      background: transparent;
+      margin-bottom: 16px;
+    }
+
+    & li:last-child {
+      margin-bottom: 0;
+    }
+
+    .selected,
+    & li:hover {
+      color: $black;
+    }
   }
 }
 
@@ -306,7 +306,7 @@
 }
 
 .product-item {
-  max-width: 267px;
+  width: 267px;
   margin-bottom: 30px;
   position: relative;
 
@@ -339,8 +339,6 @@
   }
 
   &__img {
-    max-height: 222px;
-    object-fit: cover;
     margin-bottom: 16px;
   }
 
@@ -392,6 +390,7 @@
 
   &__size {
     margin-bottom: 16px;
+    text-transform: uppercase;
   }
 
   &__favorite,
@@ -594,30 +593,8 @@
 
 .categories-filter {
   &__title {
-    margin-bottom: 25px;
-    position: relative;
-    cursor: pointer;
+    margin-bottom: 30px;
   }
-
-  &__title::before,
-  &__title--toggle::before {
-    content: '';
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-  }
-
-  &__title::before {
-    background: url(../images/icons/remove.svg);
-  }
-
-  &__title--toggle::before {
-    background: url(../images/icons/add.svg);
-  }
-
 
   &__label {
     display: block;
@@ -751,18 +728,11 @@
   }
 }
 
-.info {
-  margin-bottom: 30px;
-}
 
 
 .sellers {
   &__box-inner {
     margin-bottom: 30px;
-  }
-
-  &__box-info {
-    margin: 0;
   }
 
   .popular-item {
@@ -869,6 +839,144 @@
 
   &__text {
     margin-bottom: 30px;
+  }
+}
+
+.category {
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .product-box {
+    width: 100%;
+  }
+
+  &__items {
+    max-width: 835px;
+  }
+}
+
+.filter-price {
+  &__title {
+    margin-bottom: 25px;
+  }
+
+  .irs--flat {
+    height: 30px;
+  }
+
+  .irs--flat .irs-line {
+    top: 13px;
+    height: 1px;
+    background-color: $black;
+    border-radius: 0;
+  }
+
+  .irs--flat .irs-handle {
+    top: 9px;
+    width: 9px;
+    height: 9px;
+    background-color: black;
+    border-radius: 50px;
+    box-shadow: none;
+  }
+
+  .irs--flat .irs-handle>i:first-child {
+    display: none;
+  }
+
+  .irs--flat .irs-bar {
+    top: 13px;
+    height: 1px;
+    background-color: $gray-light;
+  }
+
+  .irs-from,
+  .irs-to,
+  .irs-single {
+    display: none;
+  }
+
+  .irs--flat .irs-min,
+  .irs--flat .irs-max {
+    display: none;
+  }
+}
+
+.filter-size {
+  &__title {
+    margin-bottom: 30px;
+  }
+
+  &__input {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    position: absolute;
+  }
+
+  &__label {
+    display: inline-flex;
+    @extend %pt-400;
+    color: $gray;
+    margin: 8px;
+  }
+
+  &__checkbox {
+    background: $gray-light-secondary;
+    border-radius: 6px;
+    padding: 6px 8px;
+    cursor: pointer;
+  }
+
+  &__input:checked+&__checkbox {
+    background: $btn;
+    color: #fff;
+  }
+}
+
+.filter-color {
+  &__title {
+    margin-bottom: 30px;
+  }
+
+  &__label+&__label {
+    margin-left: 8px;
+  }
+
+  &__input {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    position: absolute;
+  }
+
+  &__checkbox {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &:hover {
+      opacity: .3;
+    }
+  }
+
+  &__input:checked+&__checkbox {
+    opacity: .5;
+  }
+}
+
+.filter-reset {
+  &__btn {
+    width: 100%;
+    background: #FFF;
+    border: 1px solid $gray-light;
+    color: $black;
   }
 }
 
