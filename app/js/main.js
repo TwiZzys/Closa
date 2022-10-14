@@ -52,4 +52,26 @@ $(function () {
       $('.filter-price__to').text(data.to);
     }
   });
+  $('.product-slide__thumb').slick({
+    asNavFor: '.product-slide__big',
+    focusOnSelect: true,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    vertical: true,
+    draggable: false,
+    arrows: false
+  });
+  $('.product-slide__big').slick({
+    asNavFor: '.product-slide__thumb',
+    draggable: false,
+    arrows: false,
+    fade: true
+  });
+  $('.product-one__form-num').styler();
+  $('.product-one__items').slick({
+    slidesToShow: 4,
+    slidesToScroll: 2,
+    prevArrow: '<button class="slick-btn slick-btn__prev"><img src="images/icons/slider-left-arrow.svg" alt=""></button>',
+    nextArrow: '<button class="slick-btn slick-btn__next"><img src="images/icons/slider-right-arrow.svg" alt=""></button>',
+  });
 });

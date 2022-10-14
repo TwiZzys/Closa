@@ -68,6 +68,13 @@ body {
   color: $btn;
 }
 
+.tab--active {
+  @extend %pt-500;
+  color: $btn !important;
+  padding-bottom: 11.5px;
+  border-bottom: 1px solid $btn;
+}
+
 .breadcrumbs {
   background: $gray-light;
   padding: 24px 0;

@@ -200,15 +200,8 @@
     margin-left: 30px;
   }
 
-  .tab--active {
-    @extend %pt-500;
-    color: $btn;
-    padding-bottom: 11.5px;
-    border-bottom: 1px solid $btn;
-  }
-
   &__tabs-container {
-    margin-bottom: 64px;
+    margin-bottom: 60px;
   }
 
   &__inner {
@@ -309,6 +302,10 @@
   width: 267px;
   margin-bottom: 30px;
   position: relative;
+
+  &__info {
+    display: inline-block;
+  }
 
   &--new::before,
   &--sale::before {
@@ -1021,6 +1018,353 @@
     border: 1px solid $gray-light;
     color: $black;
   }
+}
+
+.product-one {
+  &__inner {
+    display: flex;
+    margin-bottom: 30px;
+  }
+
+  &__slide {
+    width: 730px;
+    margin-right: 50px;
+  }
+
+  &__content {
+    width: 365px;
+  }
+
+  &__title-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+
+  &__title {
+    position: relative;
+  }
+
+  &__title--checked {
+    padding-left: 28px;
+  }
+
+  &__title--checked::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: url(../images/icons/verified_user.svg);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+
+  &__box,
+  &__price {
+    margin-bottom: 25px;
+  }
+
+  &__text {
+    font-weight: 400;
+    margin-bottom: 30px;
+  }
+
+  & &__info-list {
+    margin-bottom: 30px;
+  }
+
+  &__info-item {
+    display: flex;
+    margin-bottom: 12px;
+  }
+
+  &__info-item:last-child {
+    margin: 0;
+  }
+
+  &__info-title {
+    margin-right: 8px;
+  }
+
+  &__info-text {
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+
+    a {
+      color: $btn;
+    }
+  }
+
+  &__info-color {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-left: 8px;
+  }
+
+  &__num {
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid $gray-light;
+  }
+
+  &__form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  &__form-btn {
+    padding: 14px 59px;
+  }
+
+  .jq-number {
+    padding: 0;
+  }
+
+  .jq-number__field {
+    width: 170px;
+    padding: 14px 32px;
+    background: $gray-light;
+    border-radius: 12px;
+    border: none;
+  }
+
+  .jq-number__field input {
+    width: 100%;
+    padding: 0;
+    border: none;
+    outline: none;
+    background: none;
+    color: $black;
+    text-align: center;
+    font: 500 16px/19px 'PT Root UI';
+  }
+
+  .jq-number__spin {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border: none;
+    border-bottom-color: none;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+    user-select: none;
+    text-shadow: none;
+    cursor: pointer;
+  }
+
+  .jq-number__spin:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border: none;
+    background: url(../images/icons/add.svg);
+  }
+
+  .jq-number__spin.minus:after {
+    background: url(../images/icons/remove.svg);
+  }
+
+  .jq-number__spin.plus {
+    right: 32px;
+  }
+
+  .jq-number__spin.minus {
+    left: 32px;
+  }
+
+  &__verify {
+    background: rgba(111, 207, 151, 0.15);
+    border-radius: 12px;
+    text-align: center;
+    padding: 14px 0;
+  }
+
+  &__verify-text {
+    position: relative;
+    color: #6FCF97;
+    padding-right: 30px;
+  }
+
+  &__verify-text::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: url(../images/icons/verified_user-green.svg);
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  &__seller-inner {
+    display: flex;
+  }
+
+  &__seller-img {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    margin-right: 15px;
+  }
+
+  &__seller-info {
+    width: 100%;
+  }
+
+  &__seller-infobox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  &__seller-text {
+    @extend %pt-400;
+    font-size: 14px;
+    line-height: 17px;
+    color: $gray;
+  }
+
+  &__seller-existence {
+    margin-bottom: 15px;
+  }
+
+  &__seller-box {
+    margin-bottom: 8px;
+  }
+
+  &__seller-btn {
+    border: 1px solid #EFF0F2;
+    border-radius: 12px;
+    padding: 7px 16px;
+    color: $gray;
+    font-size: 14px;
+    line-height: 17px;
+
+    span {
+      position: relative;
+      padding-right: 30px;
+    }
+
+    span::before {
+      content: '';
+      background: url(../images/icons/drafts-gray.svg);
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+
+  &__products-container {
+    padding-bottom: 60px;
+    border-bottom: 1px solid $gray-light;
+  }
+
+  &__products-inner {
+    margin-bottom: 60px;
+  }
+
+  &__products-inner--last {
+    margin-bottom: 30px;
+  }
+
+  &__products-content {
+    .product-one__info-list {
+      margin: 0;
+    }
+  }
+
+  &__products-title {
+    display: inline-block;
+    margin-right: 25px;
+  }
+
+  &__products-link {
+    color: $btn;
+  }
+
+  .slick-btn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: -85px;
+    right: 0;
+    z-index: 5;
+    padding: 0;
+
+    &__prev {
+      right: 44px;
+    }
+  }
+}
+
+.product-slide {
+  display: flex;
+
+  &__thumb {
+    width: 98px;
+    margin-right: 15px;
+
+    img {
+      width: 97px;
+      height: 97px;
+      object-fit: cover;
+    }
+  }
+
+  &__thumb-item {
+    margin-bottom: 9px;
+    cursor: pointer;
+  }
+
+  &__big {
+    width: 615px;
+
+    img {
+      width: 615px;
+      height: 550px;
+      object-fit: cover;
+    }
+  }
+}
+
+.product-new,
+.product-sale {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 17px;
+  padding: 4px 12px;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid $gray-light;
+}
+
+.product-new {
+  margin-right: 8px;
+}
+
+.product-sale {
+  background: $red;
+  color: #fff;
+  border: none;
 }
 
 .footer {
